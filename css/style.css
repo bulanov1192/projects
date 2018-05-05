@@ -66,7 +66,7 @@ a:active {
     line-height: 50px;
     margin: 0 5px 0 5px;
     text-align: center;
-    color: #000;
+    color: #000!important;
 }
 
 .nav_button__active {
@@ -141,11 +141,100 @@ a:active {
     width: 10%;
 }
 
-.project-add_btn {
+.project-add_btn, .task-add_btn {
     display: block;
     margin-top: 10px;
     height: 30px;
     float: left;
+}
+
+
+/* STYLES FOR "TASKS" PAGE ONLY */
+
+
+
+.task-column__drag {
+    width: 5%;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.task-drag_btn {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #000!important;
+}
+
+.task-drag_btn:active {
+    -webkit-transform: scale(.9, .9);
+    -moz-transform: scale(.9, .9);
+    -ms-transform: scale(.9, .9);
+    -o-transform: scale(.9, .9);
+    transform: scale(.9, .9);
+}
+
+.task_column__index {
+    width: 10%;
+    text-align: center;
+}
+
+.task-column__status {
+    width: 10%;
+}
+
+.task-status {
+    max-width: 50px;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 15px;
+    line-height: normal;
+    color: #000;
+    cursor: default;
+    margin: 10px 0!important;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.task-status__new {
+    background: #91e4fb;
+}
+
+.task-status__active {
+    background: #fd8553;
+}
+
+.task-status__in-progress {
+    background: #9CCC65;
+}
+
+.task-column__name {
+    width: 15%;
+}
+
+.task-name {
+    font-size: 22px;
+}
+
+.task-column__description {
+    width: 45%;
+}
+
+.task-description {
+    cursor: default;
+    width: 100%;
+    margin: 0!important;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.task-column__more {
+    width: 15%;
 }
 
 
@@ -164,6 +253,7 @@ a:active {
     background: rgba(0,0,0,0.8);
     display: table;
     text-align: center;
+    z-index: 1;
 }
 
 .hidden {
@@ -173,6 +263,7 @@ a:active {
 .popup-cont {
     display: table-cell;
     vertical-align: middle;
+    z-index: 100;
 }
 .popup {
     position: relative;
@@ -185,6 +276,7 @@ a:active {
     -moz-border-radius: 15px;
     border-radius: 15px;
     text-align: left;
+    z-index: 100;
 }
 
 .popup_header {
@@ -207,6 +299,7 @@ a:active {
 .popup_close {
     width: 50px;
     height: 50px;
+    font-size: 30px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -227,7 +320,7 @@ a:active {
     display: block;
     font-size: 18px;
     font-weight: 300;
-    margin: 5px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 .input {
@@ -236,7 +329,7 @@ a:active {
     height: 20px;
     font-size: 16px;
     line-height: 16px;
-    margin: 5px 0 0 0;
+    margin: 5px 0 10px 0;
 }
 
 .input__index {
@@ -257,6 +350,26 @@ a:active {
     font-size: 14px;
 }
 
+.popup__task-edit, .popup__task-add  {
+    width: 500px;
+}
 
+.popup_name__task-edit, .popup_name__task-add {
+    width: 450px;
+}
 
+.popup_close__task-edit, .popup_close__task-add {
+    width: 50px;
+}
 
+.form-select {
+    width: 100%;
+    display: block;
+    height: 20px!important;
+    font-size: 16px;
+    margin: 5px 0 10px 0;
+}
+
+.task-description_input {
+    resize: none;
+}
