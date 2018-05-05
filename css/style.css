@@ -237,6 +237,13 @@ a:active {
     width: 15%;
 }
 
+.empty_list {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
+
 
 /* POPUPs */
 

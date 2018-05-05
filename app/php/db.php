@@ -19,5 +19,21 @@ function getProject() {
     return $items;
 };
 
+function getTasks() {
+    global $pid;
+    global $connection;
+    if ($pid == 'all') {
+        $result = mysqli_query($connection, "SELECT * FROM `tasks`");
+        $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $items;
+    }
+    else {
+        $result = mysqli_query($connection, "SELECT * FROM `tasks` WHERE `project_id` = $pid");
+        $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        return $items;
+    }
+
+}
+
 
 
