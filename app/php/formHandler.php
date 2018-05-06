@@ -14,7 +14,10 @@ $taskDescription = htmlspecialchars(trim($_POST['task-description']));
 
 // Добавление нового проекта если поступили данные для него из POST
 if (($projectName || $projectIndex) == true) {
-    addProject($projectName, $projectIndex);
+    $result = addProject($projectName, $projectIndex);
+    if ($result == 'Такой проект уже существует, проверьте индекс или имя на уникальность') {
+        return $result;
+    }
     header('Location: /index.php');
 }
 

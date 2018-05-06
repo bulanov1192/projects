@@ -7,8 +7,15 @@ $connection = mysqli_connect('localhost', 'mysql', 'mysql', 'projects');
 
 function addProject($project_name, $project_index ) {
     global $connection;
-    mysqli_query($connection, "INSERT INTO `projects`( `project_name`, `project_index`) VALUES ('$project_name', '$project_index')");
-    mysqli_close($connection);
+    mysqli_query($connection, "SELECT * FROM `projects` WHERE `project_name` = $project_name or `project_index` = $project_index");
+    if ($connection !== mysqli_error($connection)) {
+        mysqli_query($connection, "INSERT INTO `projects`( `project_name`, `project_index`) VALUES ('$project_name', '$project_index')");
+        mysqli_close($connection);
+    }
+    else {
+        return 'Такой проект уже существует, проверьте индекс или имя на уникальность';
+    }
+
 }
 
 // Вывод проектов на страницу index
@@ -41,10 +48,10 @@ function getTasks() {
 
 // Добавление задачи в базу
 
-function addTask($taskName, $projectIndexTaskAdd, $taskStatus, $taskType, $taskDescription) {
-    global $connection;
-    $
-}
+//function addTask($taskName, $projectIndexTaskAdd, $taskStatus, $taskType, $taskDescription) {
+//    global $connection;
+//    $
+//}
 
 
 
