@@ -3,7 +3,9 @@ echo '<!-- PROJECTS LIST -->
         <div class="list">';
 
 $items = getProject(); //получение массива с проектами
-rsort($items);
+if ($items !== false){
+    rsort($items);
+}
 $item_id = 1;
 if (!$items) {
     echo '<span class="empty_list">Пока не создано ни одного проекта. Нажмите <b>"+ добавить"</b>, чтобы создать новый проект.</span>';

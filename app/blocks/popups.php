@@ -85,6 +85,9 @@ elseif ($title == 'Задачи') {
                     <label for="inputTaskName" class="label">Имя задачи</label>
                     <input type="text" id="inputTaskName" name="task-name" class="input input__name" maxlength="250">
 
+                    <label for="inputProjectIndex" class="label">Индекс проекта</label>
+                    <input type="text" id="inputProjectIndex" name="project-index__task-add" class="input input__index" maxlength="3">
+
                     <label for="inputTaskStatus" class="label">Статус</label>
                     <select class="form-select" name="task-status" id="inputTaskStatus">
                         <option value="active">Активная</option>
